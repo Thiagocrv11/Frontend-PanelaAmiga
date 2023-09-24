@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    background-color: black;
+    width: 100%;
+}
+.logo{
+    width: 40%;
+    color: white;
+}
+.logo img{
+    width: 85px;
+}
+.menu{
+    width: 50%;
+}
+.menu nav a{
+    color: white;
+    text-decoration: none;
+    padding-right: 50px;
+    font-size: 18px;
+    background-color: aqua;
+    padding: 1em;
+}
+.user a{
+    color: white;
+    text-decoration: none;
+    width: 10%;
+    background-color: aqua;
+    padding: 1em;
+}
+
