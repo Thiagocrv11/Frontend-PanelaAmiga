@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panela Amiga</title>
     <link rel="stylesheet" href="estilo/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#meuFormulario').submit(function(event) {
+                event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+
+                // Captura os dados do formulário
+                var formData = $(this).serialize(); // Serializa os dados do formulário
+
+                // Requisição AJAX para enviar os dados para o backend
+                $.ajax({
+                    type: 'POST',
+                    url: 'index.php', // URL do arquivo PHP que processa os dados
+                    data: formData,
+                    success: function(response) {
+                        // Manipule a resposta do servidor (se necessário)
+                        console.log(response);
+
+                        // Abre uma nova guia e exibe a resposta do servidor
+                        var novaJanela = window.open("", "_blank");
+                        novaJanela.document.write("<pre>" + response + "</pre>");
+                    },
+                    error: function(error) {
+                        console.error('Erro:', error);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <header>
     <div class="container">
@@ -44,50 +73,47 @@
         </div>
             <br>
             <div>
-                <form action="https://webhook.site/14ba17a9-097b-487e-b910-26bdb79f25dc" method="POST">
+                <form id="meuFormulario" action="index.php" method="POST">
                     <fieldset>
                         <legend>Ainda não tem uma conta? Registre-se agora:</legend>
-                            <fieldset>
-                                <legend>Usuário</legend>
-                                <label for="campo_email">E-mail:</label>
-                                <input type="email" nome="E-mail" id="campo_email" required placeholder="">
-                                <label for="campo_senha">Senha:</label>
-                                <input type="password" nome="Senha" id="campo_senha" required placeholder="">
-                            </fieldset>
-                            <br>
-                            <fieldset>
-                                <legend>Dados pessoais para acesso</legend>
-                                <label for="campo_nome">Nome:</label>
-                                <input type="text" nome="Nome" id="campo_nome" required placeholder="Nome e sobrenome">
-                                <label for="campo_cpf">E-mail:</label>
-                                <input type="text" nome="Email" id="campo_email" required placeholder="">
-                                <label for="campo_nasc">Data de nascimento:</label>
-                                <input type="date" nome="Datanascimento" id="campo_nasc" required placeholder="Data">
-                            </fieldset>
-                            <fieldset>
+                        <fieldset>
+                            <legend>Usuário</legend>
+                            <label for="campo_email">E-mail:</label>
+                            <input type="email" name="E-mail" id="campo_email" required placeholder=""><br>
+                            <label for="campo_senha">Senha:</label>
+                            <input type="password" name="Senha" id="campo_senha" required placeholder=""><br>
+                        </fieldset>
+                        <br>
+                        <fieldset>
+                            <legend>Dados pessoais para acesso</legend>
+                            <label for="campo_nome">Nome:</label>
+                            <input type="text" name="Nome" id="campo_nome" required placeholder="Nome e sobrenome"><br>
+                            <label for="campo_nasc">Data de nascimento:</label>
+                            <input type="date" name="Datanascimento" id="campo_nasc" required placeholder="Data"><br>
+                        </fieldset>
+                        <fieldset>
                             <legend>CEP</legend>
-                                    <label for="campo_estado"> Estado:</label>
-                                    <select>
-                                        <optgroup label="Estado">
-                                        <option value="São Paulo">São Paulo</option>
-                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                        <option value="Minas Gerais">Minas Gerais</option>
-                                        <option value="Espirito Santo">Espirito Santo</option>
-                                        </optgroup>
-                                    </select>
-                                    <label for="campo_endereço">Endereço:</label>
-                                    <input type="text" nome="endereço" id="campo_endereço" required placeholder="Obrigatório">
-                                    <label for="campo_numero">N°:</label>
-                                    <input type="number" nome="numero" id="campo_numero" required placeholder="Obrigatório">
-                                    <label for="campo_complemento">Complemento:</label>
-                                    <input type="text" nome="complemento" id="campo_complemento">
-                
-                            </fieldset>
-                            <fieldset>
-                                    <legend>Contato</legend>
-                                        <label for="campo_contato">Telefone:</label>
-                                        <input type="tel" id="campo_contato" required placeholder="(xx) xxxxx-xxxx">
-                            </fieldset>
+                            <label for="campo_estado">Estado:</label>
+                            <select name="campo_estado">
+                                <optgroup label="Estado">
+                                    <option value="São Paulo">São Paulo</option>
+                                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                    <option value="Minas Gerais">Minas Gerais</option>
+                                    <option value="Espirito Santo">Espirito Santo</option>
+                                </optgroup>
+                            </select><br>
+                            <label for="campo_endereço">Endereço:</label>
+                            <input type="text" name="endereço" id="campo_endereço" required placeholder="Obrigatório"><br>
+                            <label for="campo_numero">N°:</label>
+                            <input type="number" name="numero" id="campo_numero" required placeholder="Obrigatório"><br>
+                            <label for="campo_complemento">Complemento:</label>
+                            <input type="text" name="complemento" id="campo_complemento"><br>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Contato</legend>
+                            <label for="campo_contato">Telefone:</label>
+                            <input type="tel" name="campo_contato" id="campo_contato" required placeholder="(xx) xxxxx-xxxx"><br>
+                        </fieldset>
                     </fieldset>
                     <button type="submit">Enviar</button>
                 </form>
