@@ -6,80 +6,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panela Amiga</title>
     <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="estilo/header.css">
+    <link rel="stylesheet" href="estilo/main.css">
+    <link rel="stylesheet" href="estilo/footer.css">
+    <link rel="stylesheet" href="estilo/receitas.css">
+
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo"><img src="imagens/logoPanelaAmiga.png"></div>
-            <div class="menu">
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="receitas.html">Receitas</a>
-                    <a href="sobre.html">Sobre</a>
-                </nav>
-            </div>
+        <section class="menu">
+            <nav class="menu_link">
+                <a class="menu_link-item" href="index.html">Home</a>
+                <a class="menu_link-item" href="receitas.html">Receitas</a>
+                <a class="menu_link-item" href="sobre.html">Sobre</a>
+            </nav>
+            <div class="logo"><img src="imagens/logoPanelaAmiga.png" width="100"></div>
             <div class="user">
                 <a href="user.html">Login/Cadastrar</a>
             </div>
-        </div>
+        </section>
     </header>
 
     <main>
-        <form action="#" method="get">
-            <label for="search">Digite o nome da receita:</label>
-            <input type="text" id="search" name="search" placeholder="Exemplo: miojo" required>
-            <button type="submit">Pesquisar</button>
-        </form>
-        <br>
-        <h3>Categorias</h3>
-        <br>
-        <section class="categoria">
-            <div class="sessao">
-                <img src="imagens/cafeManha.jpg" alt="#">
-                <a href="#">Café da Manhã</a>
-            </div>
+        <h1 class="receitas_titulo">Nossas receitas</h1>
+        <p class="receitas_legenda">Sinta-se á vontade para ver nossas incriveis receitas</p>
 
-            <div class="sessao">
-                <img src="imagens/almoco.jpg" alt="#">
-                <a href="#">Almoço</a>
-            </div>
+        <h2>Cafe da manhã</h2>
+        <section class="receitas">
+            <div class="receitas_refeicao">
+                <div class="receita_item">
+                    <p class="receitas_descricao">Pão de queijo fit</p>
+                    <ul class="receitas_lista">
+                        <img src="/imagens/pao-de-queijo.jpg" width="300" alt=""></li>
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div>
 
-            <div class="sessao">
-                <img src="imagens/cafeTarde.jpg" alt="#"><a href="#">Café da Tarde</a>
-            </div>
+                <div class="receita_item">
+                    <p class="receitas_descricao">Cookies fit de aveia</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/cookie-fit.jpg" width="350"  alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div>
 
-            <div class="sessao">
-                <img src="imagens/jantar.jpg" alt="#">
-                <a href="#">Jantar</a>
+                <div class="receita_item">
+                    <p class="receitas_descricao">Bolo de caneca de banana</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/bolo-de-caneca-banana.jpg" width="380"  alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div>
             </div>
         </section>
 
-        <h3>Todas as receitas</h3>
-            <section class="destaques">
-                <div class="receita">
-                    <img src="imagens/lasanha-frango.jpg" alt="">
-                    <h3>Lasanha de Frango</h3>
-                    <a href="#">Ver Receita</a>
+        <br>
+        <hr>
+        <br>
+                
+        <h2>Almoço</h2>
+        <section class="receitas">
+            <div class="receitas_refeicao">
+                <div class="receita_item">
+                    <p class="receitas_descricao">Lasanha de frango</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/lasanha-frango.jpg" width="400" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div> 
+  
+                <div class="receita_item">
+                    <p class="receitas_descricao">Escondidinho de carne seca</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/escondidinho_de_carne_seca.jpg" width="400" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
                 </div>
-        
-                <div class="receita">
-                    <img src="imagens/sopa-abobora.jpg" alt="">
-                    <h3>Sopa de Abóbora</h3>
-                    <a href="#">Ver Receita</a>
+
+                <div class="receita_item">
+                    <p class="receitas_descricao">Arroz tropeiro</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/arroz-tropeiro.png" width="360                                                                                                                            5r" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
                 </div>
-        
-                <div class="receita">
-                    <img src="imagens/torta-maca.jpg" alt="">
-                    <h3>Torta de Maçã</h3>
-                    <a href="#">Ver Receita</a>
+            </div>
+        </section>
+
+        <br>
+        <hr>
+        <br>
+
+        <h2>Café da tarde</h2>
+        <section class="receitas">
+            <div class="receitas_refeicao">
+                <div class="receita_item">
+                    <p class="receitas_descricao">Torta de maçã</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/torta-maca.jpg" width="400" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div> 
+ 
+                <div class="receita_item">
+                    <p class="receitas_descricao">Pizza de Rap10</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/pizza-de-rap10.jpeg" width="380" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
                 </div>
-            </section>
+
+                <div class="receita_item">
+                    <p class="receitas_descricao">Pão de batata fofinho</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/Pao-de-batata-fofinho.jpg" width="370" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div>
+            </div>
+        </section>
+
+        <br>
+        <hr>
+        <br>
+
+        <h2>Jantar</h2>
+        <section class="receitas">
+            <div class="receitas_refeicao">
+                <div class="receita_item">
+                    <p class="receitas_descricao">Macarrão cremoso na panrela de pressão</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/macarrao-de-panela-de-pressao.jpg" width="380" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div> 
+ 
+                <div class="receita_item">
+                    <p class="receitas_descricao">Arroz com calabresa na pressão</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/arroz-com-calabresa-na-pressao-facil.jpeg" width="380" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div>
+
+                <div class="receita_item">
+                    <p class="receitas_descricao">Sopa de abóbora</p>
+                    <ul class="receitas_lista">
+                        <img src="imagens/sopa-abobora.jpg" width="430" alt="">
+                    </ul>
+                    <a href="#"  class="receitas_link" onclick="mostrarLogin()" >Clique aqui para ver o modo de preparo</a>
+                </div>
+            </div>
+        </section>
+
+        <div id="loginModal" class="modal">
+            <span id="fecharlogin" class="close" onclick="fecharLogin()">&times;</span>
+            <h1 class="titulo-modal">Faça o login para continuar</h1>
+            <div class="modal-conteudo">
+                <label for="username">Nome de usuário:</label>
+                <input type="text" id="username" required>
+                <br>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+                <br>
+                <button onclick="realizarLogin()">Login</button>
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay"></div>
+
+
     </main>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="imagens/logoPanelaAmiga.png" alt="Logo do Site de Culinária">
+                <img src="imagens/logoPanelaAmiga.png"  alt="Logo do Site de Culinária">
             </div>
             <div class="footer-links">
                 <ul>
@@ -100,5 +202,7 @@
             <p>&copy; 2023 Panela Amiga. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="script2.js"></script>
 </body>
 </html>
