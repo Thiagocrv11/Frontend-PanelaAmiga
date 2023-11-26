@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,119 +8,119 @@
     <link rel="stylesheet" href="estilo/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#meuFormulario').submit(function(event) {
-            event.preventDefault(); // Impede o comportamento padrão de envio do formulário
+    <script>
+        $(document).ready(function() {
+            $('#meuFormulario').submit(function(event) {
+                event.preventDefault(); // Impede o comportamento padrão de envio do formulário
 
-            // Captura os dados do formulário
-            var formData = $(this).serialize(); // Serializa os dados do formulário
+                // Captura os dados do formulário
+                var formData = $(this).serialize(); // Serializa os dados do formulário
 
-            // Requisição AJAX para enviar os dados para o backend
-            $.ajax({
-                type: 'POST',
-                url: 'https://hidekileonardo.github.io/Backend-PanelaAmiga/', // URL do arquivo PHP que processa os dados
-                data: formData,
-                success: function(response) {
-                    // Manipule a resposta do servidor (se necessário)
-                    console.log(response);
+                // Requisição AJAX para enviar os dados para o backend
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://hidekileonardo.github.io/Backend-PanelaAmiga/', // URL do arquivo PHP que processa os dados
+                    data: formData,
+                    success: function(response) {
+                        // Manipule a resposta do servidor (se necessário)
+                        console.log(response);
 
-                    // Abre uma nova guia e exibe a resposta do servidor
-                    var novaJanela = window.open("", "_blank");
-                    novaJanela.document.write("<pre>" + response + "</pre>");
-                },
-                error: function(error) {
-                    console.error('Erro:', error);
-                }
+                        // Abre uma nova guia e exibe a resposta do servidor
+                        var novaJanela = window.open("", "_blank");
+                        novaJanela.document.write("<pre>" + response + "</pre>");
+                    },
+                    error: function(error) {
+                        console.error('Erro:', error);
+                    }
+                });
             });
         });
-    });
-</script>
-
+    </script>
 </head>
-<header>
-    <div class="container">
-        <div class="logo"><img src="imagens/logoPanelaAmiga.png"></div>
-        <div class="menu">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="receitas.html">Receitas</a>
-                <a href="sobre.html">Sobre</a>
-            </nav>
-        </div>
-        <div class="user">
-            <a href="user.html">Login/Cadastrar</a>
-        </div>
-    </div>
-</header>
 
 <body>
+    <header>
+        <div class="container">
+            <div class="logo"><img src="imagens/logoPanelaAmiga.png" alt="Logo Panela Amiga"></div>
+            <div class="menu">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="receitas.html">Receitas</a>
+                    <a href="sobre.html">Sobre</a>
+                </nav>
+            </div>
+            <div class="user">
+                <a href="user.html">Login/Cadastrar</a>
+            </div>
+        </div>
+    </header>
+
     <main class="user">
         <div>
             <h3>Seu usuário</h3>
-                <p>Bem-vindo de volta à sua experiência culinária personalizada!</p>
-                <p>Faça o login para acessar seu perfil, salvar suas receitas favoritas, participar da nossa comunidade e explorar recursos exclusivos.</p>
-                <ul>
-                    <li>Crie e compartilhe suas próprias receitas.</li>
-                    <li>Participe de discussões animadas com outros entusiastas da culinária.</li>
-                    <li>Receba atualizações exclusivas sobre novas receitas e dicas culinárias.</li>
-                </ul>
-                <fieldset>
-                    <legend>Já é um membro? Faça o login abaixo:</legend>
-                                <label for="campo_email">E-mail:</label>
-                                <input type="email" nome="E-mail" id="campo_email" required placeholder="">
-                                <label for="campo_senha">Senha:</label>
-                                <input type="password" nome="Senha" id="campo_senha" required placeholder="">
-                </fieldset>
-                <button type="submit">Entrar</button>
+            <p>Bem-vindo de volta à sua experiência culinária personalizada!</p>
+            <p>Faça o login para acessar seu perfil, salvar suas receitas favoritas, participar da nossa comunidade e explorar recursos exclusivos.</p>
+            <ul>
+                <li>Crie e compartilhe suas próprias receitas.</li>
+                <li>Participe de discussões animadas com outros entusiastas da culinária.</li>
+                <li>Receba atualizações exclusivas sobre novas receitas e dicas culinárias.</li>
+            </ul>
+            <fieldset>
+                <legend>Já é um membro? Faça o login abaixo:</legend>
+                <label for="campo_email">E-mail:</label>
+                <input type="email" name="E-mail" id="campo_email" required placeholder="">
+                <label for="campo_senha">Senha:</label>
+                <input type="password" name="Senha" id="campo_senha" required placeholder="">
+            </fieldset>
+            <button type="submit">Entrar</button>
         </div>
-            <br>
-            <div>
-                <form id="meuFormulario">
+        <br>
+        <div>
+            <form id="meuFormulario">
+                <fieldset>
+                    <legend>Ainda não tem uma conta? Registre-se agora:</legend>
                     <fieldset>
-                        <legend>Ainda não tem uma conta? Registre-se agora:</legend>
-                        <fieldset>
-                            <legend>Usuário</legend>
-                            <label for="campo_email">E-mail:</label>
-                            <input type="email" name="E-mail" id="campo_email" required placeholder=""><br>
-                            <label for="campo_senha">Senha:</label>
-                            <input type="password" name="Senha" id="campo_senha" required placeholder=""><br>
-                        </fieldset>
-                        <br>
-                        <fieldset>
-                            <legend>Dados pessoais para acesso</legend>
-                            <label for="campo_nome">Nome:</label>
-                            <input type="text" name="Nome" id="campo_nome" required placeholder="Nome e sobrenome"><br>
-                            <label for="campo_nasc">Data de nascimento:</label>
-                            <input type="date" name="Datanascimento" id="campo_nasc" required placeholder="Data"><br>
-                        </fieldset>
-                        <fieldset>
-                            <legend>CEP</legend>
-                            <label for="campo_estado">Estado:</label>
-                            <select name="campo_estado">
-                                <optgroup label="Estado">
-                                    <option value="São Paulo">São Paulo</option>
-                                    <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                    <option value="Minas Gerais">Minas Gerais</option>
-                                    <option value="Espirito Santo">Espirito Santo</option>
-                                </optgroup>
-                            </select><br>
-                            <label for="campo_endereço">Endereço:</label>
-                            <input type="text" name="endereço" id="campo_endereço" required placeholder="Obrigatório"><br>
-                            <label for="campo_numero">N°:</label>
-                            <input type="number" name="numero" id="campo_numero" required placeholder="Obrigatório"><br>
-                            <label for="campo_complemento">Complemento:</label>
-                            <input type="text" name="complemento" id="campo_complemento"><br>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Contato</legend>
-                            <label for="campo_contato">Telefone:</label>
-                            <input type="tel" name="campo_contato" id="campo_contato" required placeholder="(xx) xxxxx-xxxx"><br>
-                        </fieldset>
+                        <legend>Usuário</legend>
+                        <label for="campo_email_registro">E-mail:</label>
+                        <input type="email" name="E-mail" id="campo_email_registro" required placeholder=""><br>
+                        <label for="campo_senha_registro">Senha:</label>
+                        <input type="password" name="Senha" id="campo_senha_registro" required placeholder=""><br>
                     </fieldset>
-                    <button type="button" onclick="enviarFormulario()">Enviar</button>
-                </form>
-            </div>
+                    <br>
+                    <fieldset>
+                        <legend>Dados pessoais para acesso</legend>
+                        <label for="campo_nome">Nome:</label>
+                        <input type="text" name="Nome" id="campo_nome" required placeholder="Nome e sobrenome"><br>
+                        <label for="campo_nasc">Data de nascimento:</label>
+                        <input type="date" name="Datanascimento" id="campo_nasc" required placeholder="Data"><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>CEP</legend>
+                        <label for="campo_estado">Estado:</label>
+                        <select name="campo_estado" id="campo_estado">
+                            <optgroup label="Estado">
+                                <option value="São Paulo">São Paulo</option>
+                                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                <option value="Minas Gerais">Minas Gerais</option>
+                                <option value="Espirito Santo">Espirito Santo</option>
+                            </optgroup>
+                        </select><br>
+                        <label for="campo_endereço">Endereço:</label>
+                        <input type="text" name="endereço" id="campo_endereço" required placeholder="Obrigatório"><br>
+                        <label for="campo_numero">N°:</label>
+                        <input type="number" name="numero" id="campo_numero" required placeholder="Obrigatório"><br>
+                        <label for="campo_complemento">Complemento:</label>
+                        <input type="text" name="complemento" id="campo_complemento"><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contato</legend>
+                        <label for="campo_contato">Telefone:</label>
+                        <input type="tel" name="campo_contato" id="campo_contato" required placeholder="(xx) xxxxx-xxxx"><br>
+                    </fieldset>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </main>
 
     <footer class="footer">
@@ -147,4 +148,5 @@
         </div>
     </footer>
 </body>
+
 </html>
